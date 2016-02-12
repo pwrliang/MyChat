@@ -40,8 +40,7 @@
                 android:id="@+id/al_edt_username"
                 style="@style/LoginEdit"
                 android:layout_marginLeft="40dp"
-                android:hint="@string/hint_username"
-                android:text="@string/testUsername" />
+                android:hint="@string/hint_username" />
         </LinearLayout>
 
         <LinearLayout
@@ -56,8 +55,7 @@
                 android:id="@+id/al_edt_password"
                 style="@style/LoginEdit"
                 android:layout_marginLeft="55dp"
-                android:inputType="textPassword"
-                android:text="@string/testPassword" />
+                android:inputType="textPassword" />
         </LinearLayout>
 
         <Button
