@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.LoginActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/al_abl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/al_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/al_ll_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/al_abl"
+        android:layout_margin="16dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/LoginTextView"
+                android:text="@string/username" />
+
+            <EditText
+                android:id="@+id/al_edt_username"
+                style="@style/LoginEdit"
+                android:layout_marginLeft="40dp"
+                android:hint="@string/hint_username"
+                android:text="@string/testUsername" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/LoginTextView"
+                android:text="@string/password" />
+
+            <EditText
+                android:id="@+id/al_edt_password"
+                style="@style/LoginEdit"
+                android:layout_marginLeft="55dp"
+                android:inputType="textPassword"
+                android:text="@string/testPassword" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/al_btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/login"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/al_btn_registration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/registration"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/al_ll_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/al_ll_login"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleInverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:text="@string/logining"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/colorBlack" />
+    </LinearLayout>
+
+
+</RelativeLayout>

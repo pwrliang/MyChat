@@ -1,0 +1,27 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_toLeftOf="@+id/mirt_iv_right_portrait"
+        android:background="@drawable/msg_right">
+
+        <TextView
+            android:id="@+id/mirt_tv_right_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:layout_gravity="center"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/mirt_iv_right_portrait"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="right" />
+</RelativeLayout>

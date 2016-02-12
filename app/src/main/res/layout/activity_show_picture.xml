@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.gl.mychatclient.utils.ZoomImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/asp_ziv_picture"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"></com.gl.mychatclient.utils.ZoomImageView>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.RegistrationActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/ar_abl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/ar_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/ar_ll_registration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ar_abl"
+        android:layout_margin="16dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/LoginTextView"
+                android:text="@string/nickname" />
+
+            <EditText
+                android:id="@+id/ar_edt_nickname"
+                style="@style/LoginEdit"
+                android:layout_marginLeft="60dp"
+                android:hint="@string/hint_nickname"
+                android:text="@string/testNickname" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/LoginTextView"
+                android:text="@string/phone_number" />
+
+            <EditText
+                android:id="@+id/ar_edt_phone_number"
+                style="@style/LoginEdit"
+                android:layout_marginLeft="20dp"
+                android:hint="@string/hint_phone_number"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:text="@string/testPhoneNumber" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/LoginTextView"
+                android:text="@string/username" />
+
+            <EditText
+                android:id="@+id/ar_edt_username"
+                style="@style/LoginEdit"
+                android:layout_marginLeft="38dp"
+                android:hint="@string/hint_username"
+                android:text="@string/testUsername" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/LoginTextView"
+                android:text="@string/password" />
+
+            <EditText
+                android:id="@+id/ar_edt_password"
+                style="@style/LoginEdit"
+                android:layout_marginLeft="55dp"
+                android:hint="@string/hint_password"
+                android:inputType="textPassword"
+                android:text="@string/testPassword" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/LoginTextView"
+                android:text="@string/confirm_password" />
+
+            <EditText
+                android:id="@+id/ar_edt_confirm_password"
+                style="@style/LoginEdit"
+                android:layout_marginLeft="20dp"
+                android:hint="@string/hint_confirm_password"
+                android:inputType="textPassword"
+                android:text="geng_93418" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/ar_btn_registration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/registration"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ar_ll_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ar_ll_registration"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleInverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:text="@string/registing"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/colorBlack" />
+    </LinearLayout>
+</RelativeLayout>

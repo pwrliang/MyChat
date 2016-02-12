@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorBlack">#000000</color>
+    <color name="light_grey">#E6E6E6</color>
+    <!--#E6E6E6 #B8B8B8 666666-->
+    <color name="dark_grey">#B8B8B8</color>
+    <color name="frame_color">#717171</color>
+    <color name="text_color">#666666</color>
+    <drawable name="green_btn_normal">@android:color/holo_green_light</drawable>
+    <drawable name="green_btn_pressed">@android:color/holo_green_dark</drawable>
+</resources>
