@@ -42,7 +42,6 @@ public class FriendFragment extends Fragment implements AdapterView.OnItemClickL
     private ListView lvFriends;
     private FriendItemAdapter friendAdapter;
     private List<FriendItem> friendItems = new ArrayList<>();
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -121,7 +120,7 @@ public class FriendFragment extends Fragment implements AdapterView.OnItemClickL
                 Drawable drawable = ContextCompat.getDrawable(getContext(), R.drawable.new_friends);
                 friendItems.add(new FriendItem(MyChatUtility.getBytesFromDrawable(drawable), getString(R.string.new_friends)));
                 drawable = ContextCompat.getDrawable(getContext(), R.drawable.black_list);
-                friendItems.add(new FriendItem(MyChatUtility.getBytesFromDrawable(drawable), getString(R.string.new_friends)));
+                friendItems.add(new FriendItem(MyChatUtility.getBytesFromDrawable(drawable), getString(R.string.black_list)));
                 friendAdapter.notifyDataSetChanged();
             }
         }.execute();
@@ -141,6 +140,7 @@ public class FriendFragment extends Fragment implements AdapterView.OnItemClickL
             Intent intent = new Intent(getContext(), ProfileActivity.class);
             if (friendProfile.getPortrait() != null) {
                 intent.putExtra("portrait", friendProfile.getPortrait());
+                LogUtil.i(TAG,"从数据库读 头像非空");
             }
             if (!TextUtils.isEmpty(friendProfile.getGender())) {
                 intent.putExtra("gender", friendProfile.getGender());

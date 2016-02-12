@@ -73,13 +73,13 @@ public class MyChatFragment extends Fragment implements AdapterView.OnItemClickL
         Session session = sessionList.get(position);
         FriendsDB friendsDB = FriendsDB.getInstance(getContext());
         FriendProfile friendProfile = friendsDB.findFriend(session.getUsername());
-        Intent newIntent = new Intent(getContext(), ChatActivity.class);
-        newIntent.putExtra("username", friendProfile.getUsername());
+        Intent intent = new Intent(getContext(), ChatActivity.class);
+        intent.putExtra("username", friendProfile.getUsername());
         if (!TextUtils.isEmpty(friendProfile.getFriendNote())) {
-            newIntent.putExtra("title", friendProfile.getFriendNote());
+            intent.putExtra("title", friendProfile.getFriendNote());
         } else
-            newIntent.putExtra("title", friendProfile.getNickname());
-        startActivity(newIntent);
+            intent.putExtra("title", friendProfile.getNickname());
+        startActivity(intent);
     }
 
     private class LocalReceiver extends BroadcastReceiver {

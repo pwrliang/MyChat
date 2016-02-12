@@ -69,7 +69,11 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             byte[] bytes = intent.getByteArrayExtra("portrait");
             Bitmap portrait = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
             ivPortrait.setImageBitmap(portrait);
+        }else{
+            LogUtil.i(TAG,"头像未找到");
         }
+
+
         if (intent.hasExtra("gender")) {
             if (intent.getStringExtra("gender").equals("MALE")) {
                 ivGender.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.male));

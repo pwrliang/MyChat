@@ -30,22 +30,23 @@ public class FriendsDB {
     }
 
     public void saveFriend(FriendProfile friendProfile) {
-        String picId = null;
-        //查询是否有头像
-        if (friendProfile.getPortrait() != null) {
-            SQLiteStatement statement = database.compileStatement("INSERT INTO TBL_PICTURE(PICTURE) VALUES (?)");
-            statement.bindBlob(1, friendProfile.getPortrait());
-            long rowId = statement.executeInsert();
-            statement.close();
-            Cursor cursor = database.rawQuery("SELECT PIC_ID FROM TBL_PICTURE WHERE ROWID=?", new String[]{rowId + ""});
-            while (cursor.moveToNext()) {
-                picId = cursor.getInt(0) + "";
+        if (findFriend(friendProfile.getUsername()) == null) {
+            String picId = null;
+            //查询是否有头像
+            if (friendProfile.getPortrait() != null) {
+                SQLiteStatement statement = database.compileStatement("INSERT INTO TBL_PICTURE(PICTURE) VALUES (?)");
+                statement.bindBlob(1, friendProfile.getPortrait());
+                long rowId = statement.executeInsert();
+                statement.close();
+                Cursor cursor = database.rawQuery("SELECT PIC_ID FROM TBL_PICTURE WHERE ROWID=?", new String[]{rowId + ""});
+                while (cursor.moveToNext()) {
+                    picId = cursor.getInt(0) + "";
+                }
             }
-        }
-        if (findFriend(friendProfile.getUsername()) == null)
             database.execSQL("INSERT INTO TBL_USER(USERNAME,NICKNAME,GENDER,REGION,PORTRAIT,DESCRIPTION,FRIENDNOTE) " +
                     "VALUES (?,?,?,?,?,?,?)", new String[]{friendProfile.getUsername(), friendProfile.getNickname(), friendProfile.getGender(),
                     friendProfile.getRegion(), picId, friendProfile.getDescription(), friendProfile.getFriendNote()});
+        }
         else
             updateFriend(friendProfile);
     }
@@ -57,7 +58,6 @@ public class FriendsDB {
             statement.bindString(2, friendProfile.getUsername());
             statement.executeUpdateDelete();
         }
-
         database.execSQL("UPDATE TBL_USER SET NICKNAME=?,GENDER=?,REGION=?,DESCRIPTION=?,FRIENDNOTE=?" +
                 " WHERE USERNAME=?", new String[]{
                 friendProfile.getNickname(), friendProfile.getGender(), friendProfile.getRegion(), friendProfile.getDescription(), friendProfile.getFriendNote(), friendProfile.getUsername()});
@@ -96,9 +96,8 @@ public class FriendsDB {
             byte[] bytes = null;
             if (cursor.getString(4) != null) {
                 Cursor picCursor = database.rawQuery("SELECT PICTURE FROM TBL_PICTURE WHERE PIC_ID=?", new String[]{cursor.getString(4)});
-                bytes = null;
-                while (picCursor.moveToNext())
-                    bytes = picCursor.getBlob(0);
+                picCursor.moveToNext();
+                bytes = picCursor.getBlob(0);
             }
             friendProfile = new FriendProfile();
             friendProfile.setUsername(cursor.getString(0));
