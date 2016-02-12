@@ -11,4 +11,33 @@
 消息：发送文字，表情（需要从输入法选择emoji表情）、发送图片（长按发送按钮）、删除当前会话<br />
 个人设置：注册、登录、退出当前用户、设置头像、昵称、个性签名等<br />
 尚未实现功能：朋友圈、黑名单管理、密码修改<br />
-服务器端源码：https://github.com/pwrliang/MyChatServer
+
+<p>
+	服务器端源码：https://github.com/pwrliang/MyChatServer
+</p>
+<p>
+	<br />
+	
+</p>
+<p>
+	截图：
+</p>
+<p>
+	<img src="https://raw.githubusercontent.com/pwrliang/MyChat/master/DEMO/Screenshot_2016-02-12-17-58-35_com.gl.mychatclient.png" alt="" /><br />
+	
+</p>
+<p>
+	<img src="https://raw.githubusercontent.com/pwrliang/MyChat/master/DEMO/Screenshot_2016-02-12-17-58-14_com.gl.mychatclient.png" alt="" />
+</p>
+<p>
+	<img src="https://raw.githubusercontent.com/pwrliang/MyChat/master/DEMO/Screenshot_2016-02-12-18-01-02_com.gl.mychatclient.png" alt="" /><br />
+	
+</p>
+<p>
+	<br />
+	
+</p>
+<p>
+	<img src="https://raw.githubusercontent.com/pwrliang/MyChat/master/DEMO/Screenshot_2016-02-12-18-04-15_com.gl.mychatclient.png" alt="" /><br />
+	
+</p>
