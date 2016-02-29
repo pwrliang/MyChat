@@ -33,31 +33,31 @@ public class UserAPI {
         return false;
     }
 
-    public static List<Notification> queryNotifications() {
-        Map<String, String> params = new HashMap<>();
-        params.put("action", "querynotification");
-        params.put("token", Declaration.configuration.getToken());
-        String url = Declaration.SERVLET_URL + "/UserServlet?" + NetworkUtility.encodeParam(params);
-        List<Notification> notifications = new ArrayList<>();
-        try {
-            String response = NetworkUtility.sendGetRequest(url);
-            JSONObject jsonObject = new JSONObject(response);
-            if (jsonObject.getInt("status") == 0 || !jsonObject.has("notifications"))
-                return null;
-            JSONArray jsonArray = jsonObject.getJSONArray("notifications");
-            for (int i = 0; i < jsonArray.length(); ++i) {
-                jsonObject = jsonArray.getJSONObject(i);
-                Notification notification = new Notification();
-                notification.setNotificationId(jsonObject.getInt("notificationid"));
-                notification.setNotification(jsonObject.getString("notification"));
-                notifications.add(notification);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-        return notifications;
-    }
+//    public static List<Notification> queryNotifications() {
+//        Map<String, String> params = new HashMap<>();
+//        params.put("action", "querynotification");
+//        params.put("token", Declaration.configuration.getToken());
+//        String url = Declaration.SERVLET_URL + "/UserServlet?" + NetworkUtility.encodeParam(params);
+//        List<Notification> notifications = new ArrayList<>();
+//        try {
+//            String response = NetworkUtility.sendGetRequest(url);
+//            JSONObject jsonObject = new JSONObject(response);
+//            if (jsonObject.getInt("status") == 0 || !jsonObject.has("notifications"))
+//                return null;
+//            JSONArray jsonArray = jsonObject.getJSONArray("notifications");
+//            for (int i = 0; i < jsonArray.length(); ++i) {
+//                jsonObject = jsonArray.getJSONObject(i);
+//                Notification notification = new Notification();
+//                notification.setNotificationId(jsonObject.getInt("notificationid"));
+//                notification.setNotification(jsonObject.getString("notification"));
+//                notifications.add(notification);
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            return null;
+//        }
+//        return notifications;
+//    }
 
     /*
     * 修改自己的名片

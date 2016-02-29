@@ -156,9 +156,9 @@ public class MainActivity extends AppCompatActivity {
                     return new MyChatFragment();
                 case 1:
                     return new FriendFragment();
+//                case 2:
+//                    return new DiscoveryFragment();
                 case 2:
-                    return new DiscoveryFragment();
-                case 3:
                     return new MeFragment();
             }
             return null;
@@ -167,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 4 total pages.
-            return 4;
+            return 3;
         }
 
         @Override
@@ -177,9 +177,9 @@ public class MainActivity extends AppCompatActivity {
                     return "我信";
                 case 1:
                     return "通讯录";
+//                case 2:
+//                    return "发现";
                 case 2:
-                    return "发现";
-                case 3:
                     return "我";
             }
             return null;

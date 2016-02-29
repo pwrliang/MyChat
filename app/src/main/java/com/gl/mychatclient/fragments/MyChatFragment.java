@@ -59,7 +59,8 @@ public class MyChatFragment extends Fragment implements AdapterView.OnItemClickL
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        localBroadcastManager.unregisterReceiver(localReceiver);
+        if (localReceiver != null)
+            localBroadcastManager.unregisterReceiver(localReceiver);
     }
 
     @Override

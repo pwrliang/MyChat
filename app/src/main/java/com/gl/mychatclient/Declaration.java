@@ -9,5 +9,5 @@ public class Declaration {
     public static final int REQ_LOGIN = 0;
     public static final int RPS_LOGIN_SUCCESSFUL = 1;
     public static Configuration configuration;
-    public static final String SERVLET_URL = "http://gl329510010.vicp.cc/MyChatServer/servlet";
+    public static  String SERVLET_URL = "http://gl329510010.vicp.cc/MyChatServer/servlet";
 }
